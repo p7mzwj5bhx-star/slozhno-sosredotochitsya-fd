@@ -2,4 +2,387 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--bg-color);
+  background-image: var(--cover-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--color-text);
+}
+
+/* Декоративные уголки */
+
+.decorated-zone {
+  position: relative;
+}
+
+/* Правый верхний угол */
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  top: var(--spacing-m);
+  right: var(--spacing-m);
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+}
+
+/* Левый нижний угол */
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  bottom: var(--spacing-m);
+  left: var(--spacing-m);
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+}
+
+/* Header */
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  padding: var(--spacing-m);
+  height: 100vh;
+  min-height: 668px;
+}
+
+/* Меню тем — прижато к правому краю */
+.header__theme-menu {
+  align-self: center;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header__theme-menu-button {
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 2px 13px;
+  color: var(--accent-color);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: var(--line-height);
+  text-transform: lowercase;
+}
+
+.header__theme-menu-button:hover {
+  border-color: color-mix(in srgb, var(--accent-color) 40%, transparent);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  text-decoration: underline;
+}
+
+.header__theme-menu-button_active {
+  border-color: var(--accent-color);
+  pointer-events: none;
+}
+
+/* Метка REC — декоративная, по умолчанию скрыта */
+.header__rec-label {
+  display: none;
+  position: absolute;
+  top: var(--spacing-m);
+  right: 48px;
+  color: var(--accent-color);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: var(--line-height);
+  text-transform: uppercase;
+}
+
+/* Точка справа от REC через псевдоэлемент */
+.header__rec-label::after {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-inline-start: var(--spacing-s);
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  vertical-align: middle;
+}
+
+/* Заголовок h1 — по центру грид-строки */
+.header__title {
+  align-self: center;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: bold;
+  line-height: 0.825;
+  color: var(--color-title);
+  text-shadow: 4px 4px 0 var(--shadow-color);
+  margin-inline-start: calc(var(--spacing-m) * -1);
+}
+
+/* Описание — прижато к правому нижнему углу */
+.header__description {
+  align-self: end;
+  justify-self: end;
+  max-width: 50%;
+  font-weight: 700;
+}
+
+/* Общий класс декоративного фона*/
+
+.title-decor {
+  background-color: var(--title-decor-bg);
+  color: var(--title-decor-color);
+}
+
+/* Основной контент */
+
+.content {
+  padding: var(--spacing-xl) var(--spacing-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+}
+
+/* Мобильная секция. Всё в одну строку. */
+
+.section {
+  display: grid;
+  gap: var(--spacing-m);
+}
+
+.section__title {
+  color: var(--accent-color);
+  font-size: inherit;
+  font-weight: bold;
+}
+
+.section__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+/* Карточки */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+}
+
+.card__title {
+  font-size: inherit;
+  font-weight: bold;
+}
+
+.card__title_simple-tips {
+  font-weight: 700;
+}
+
+.card__text {
+  line-height: var(--line-height);
+}
+
+.card__title-concentration {
+  font-weight: lighter;
+}
+
+/* Ссылки */
+
+.card__link {
+  text-shadow: 2px 2px 0 var(--shadow-color);
+  text-decoration: none;
+}
+
+.card__link:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.card__link:focus {
+  outline: none;
+}
+
+.card__link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+/* Галерея (мобильная) */
+
+.gallery {
+  padding: 0 var(--spacing-m) var(--spacing-xl);
+}
+
+.gallery__title {
+  font-size: inherit;
+  font-weight: bold;
+  margin-block-end: var(--spacing-m);
+}
+
+.gallery__images {
+  display: grid;
+  gap: var(--spacing-m);
+}
+
+.gallery__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-m);
+  height: 100vh;
+  min-height: 668px;
+}
+
+.footer__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: bold;
+  line-height: 0.825;
+  color: var(--color-title);
+  text-shadow: 2px 2px 0 var(--footer-shadow-color);
+}
+
+/* Планшет */
+
+@media (width >= 768px) {
+
+  .header {
+    min-height: 1024px;
+  }
+
+  .footer {
+    min-height: 1024px;
+  }
+
+  /* Заголовки шапки и футера: формула для планшета/десктопа */
+  .header__title,
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  /* Секция 1: заголовок слева (1fr), карточки справа (2fr) */
+  .section {
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+  }
+
+  /* Секция 2: заголовок на всю ширину, карточки в ряд ниже */
+  .section_why-hard {
+    grid-template-columns: 1fr;
+  }
+
+  .section_why-hard .section__content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  /* Секция 3: заголовок секции на всю ширину, подзаголовок+карточки справа */
+  .section_how-to {
+    grid-template-columns: 1fr;
+
+  }
+
+  .section_how-to .section__title {
+    grid-column: 1 / -1;
+    inline-size: 325px;
+  }
+
+  .section_how-to .section__content {
+    grid-column: 2 / 3;
+  }
+
+  /* Галерея: 3 колонки, 2 строки — картинки разного размера */
+  .gallery__images {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 260px);
+  }
+
+  /* Картинка с рассветом */
+  .gallery__image:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  /* Картинка с мороженным */
+  .gallery__image:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+
+  /* Картинка с кассетой */
+  .gallery__image:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  /* Картинка с книгой */
+  .gallery__image:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* Картинка с дорогой */
+  .gallery__image:nth-child(5) {
+  grid-column: 2 / 4;
+  grid-row: 3;
+  }
+}
+
+/* Десктоп */
+
+@media (width >= 1024px) {
+
+  .header {
+    min-height: 768px;
+  }
+
+  .footer {
+    min-height: 768px;
+  }
+
+  /* Меню тем: горизонтально по центру сверху */
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+}
+
+/* Описание на всю ширину на мобильной версии */
+
+@media (width <= 375px) {
+  .header__description {
+    align-self: end;
+    max-width: 100%;
+    font-weight: 700;
+  }
+}
+
+/* Выравнивание сетки на большом разрешении */
+
+@media (width >= 1440px) {
+  .section_how-to .section__title {
+    inline-size: 465px;
+  }
 }

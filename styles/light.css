@@ -9,4 +9,20 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --bg-color: #ffddee;
+  --cover-image: url('../images/cover-image-light.png');
+ 
+  --accent-color: #353430;
+  --color-text: #2b1939;
+  --color-title: #FFC2E6;
+  --shadow-color: #FF8DCB;
+  --footer-shadow-color: #FF0070;
+ 
+  --title-decor-bg: #ff8dcb;
+  --title-decor-color: #353430;
+}
+
+/* В светлой теме метка REC скрыта */
+:root.theme-light .header__rec-label {
+  display: none;
 }
