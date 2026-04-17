@@ -1,15 +1,15 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  overflow-x: hidden;
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-color: var(--background-color);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  color: var(--color-text);
-  overflow-x: hidden;
 }
 
 /* Декоративные уголки */
@@ -45,40 +45,40 @@
 /* Header */
 
 .header {
-  background-image: var(--cover-image);
-  background-size: cover;
   display: grid;
   grid-template-rows: 1fr auto 1fr;
-  padding: var(--spacing-m);
   height: 100vh;
   min-height: 668px;
+  padding: var(--spacing-m);
+  background-image: var(--cover-image);
+  background-size: cover;
 }
 
 /* Меню тем — прижато к правому краю */
 .header__theme-menu {
-  align-self: center;
   justify-self: end;
+  align-self: center;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-s);
-  list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .header__theme-menu-button {
-  background: transparent;
   border: 1px solid transparent;
-  cursor: pointer;
   padding: 2px 13px;
   color: var(--accent-color);
   font-family: inherit;
   font-size: inherit;
   line-height: var(--line-height);
   text-transform: lowercase;
+  background: transparent;
+  cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
@@ -97,10 +97,10 @@
 
 /* Метка REC — декоративная, по умолчанию скрыта */
 .header__rec-label {
-  display: none;
   position: absolute;
   top: var(--spacing-m);
   right: 30px;
+  display: none;
   color: var(--accent-color);
   font-family: inherit;
   font-size: inherit;
@@ -116,47 +116,47 @@
   height: 9px;
   margin-inline-start: var(--spacing-s);
   border-radius: 50%;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 4px 2px var(--accent-color);
   vertical-align: middle;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
 }
 
 /* Заголовок h1 — по центру грид-строки */
 .header__title {
   align-self: center;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  font-weight: bold;
-  line-height: 0.825;
-  color: var(--color-title);
-  text-shadow: 4px 4px 0 var(--shadow-color);
   margin-inline-start: calc(var(--spacing-m) * -1);
   padding-bottom: 30px;
+  color: var(--color-title);
+  font-weight: bold;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825;
+  text-shadow: 4px 4px 0 var(--shadow-color);
 }
 
 /* Описание — прижато к правому нижнему углу */
 .header__description {
-  align-self: end;
   justify-self: end;
+  align-self: end;
   max-width: 100%;
-  font-weight: 700;
   margin-bottom: 66px;
+  font-weight: 700;
 }
 
 /* Общий класс декоративного фона*/
 
 .title-decor {
-  background-color: var(--title-decor-bg);
   color: var(--title-decor-color);
+  background-color: var(--title-decor-bg);
 }
 
 /* Основной контент */
 
 .content {
-  padding: var(--spacing-xl) var(--spacing-m);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-l);
   max-width: 100%;
+  padding: var(--spacing-l) var(--spacing-m);
 }
 
 /* Мобильная секция. Всё в одну строку. */
@@ -168,8 +168,8 @@
 
 .section__title {
   color: var(--accent-color);
-  font-size: inherit;
   font-weight: bold;
+  font-size: inherit;
 }
 
 .section__content {
@@ -187,8 +187,8 @@
 }
 
 .card__title {
-  font-size: inherit;
   font-weight: bold;
+  font-size: inherit;
 }
 
 .card__title_simple-tips {
@@ -206,8 +206,8 @@
 /* Ссылки */
 
 .card__link {
-  text-shadow: 2px 2px 0 var(--shadow-color);
   text-decoration: none;
+  text-shadow: 2px 2px 0 var(--shadow-color);
 }
 
 .card__link:hover {
@@ -229,9 +229,9 @@
 }
 
 .gallery__title {
-  font-size: inherit;
-  font-weight: bold;
   margin-block-end: var(--spacing-m);
+  font-weight: bold;
+  font-size: inherit;
 }
 
 .gallery__images {
@@ -252,16 +252,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--spacing-m);
   height: 100vh;
   min-height: 668px;
+  padding: var(--spacing-m);
 }
 
 .footer__title {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  font-weight: bold;
-  line-height: 0.825;
   color: var(--color-title);
+  font-weight: bold;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825;
   text-shadow: 2px 2px 0 var(--footer-shadow-color);
 }
 
@@ -276,6 +276,7 @@
   .header__description {
     margin-bottom: 162px;
     font-weight: bold;
+    inline-size: 364px;
   }
 
   .footer {
@@ -292,32 +293,32 @@
   .section {
     grid-template-columns: 1fr 2fr;
     align-items: start;
-    padding-bottom: 80px;
     width: 100%;
+    padding-bottom: 30px;
   }
 
   /* Секция 2: заголовок на всю ширину, карточки в ряд ниже */
   .section_why-hard {
     grid-template-columns: 1fr;
+    padding-bottom: 30px;
   }
 
   .section_why-hard .section__content {
-    flex-direction: row;
     align-items: flex-start;
   }
 
   .section_why-hard .section__title {
-    inline-size: 300px;
+    inline-size: 200px;
   }
   /* Секция 3: заголовок секции на всю ширину, подзаголовок+карточки справа */
   .section_how-to {
     grid-template-columns: 1fr;
-
+    padding-bottom: 30px;
   }
 
   .section_how-to .section__title {
     grid-column: 1 / -1;
-    inline-size: 325px;
+    inline-size: 235px;
   }
 
   .section_how-to .section__content {
@@ -371,6 +372,7 @@
 
   .header__description {
     margin-bottom: 123px;
+    inline-size: 491px;
   }
 
   .footer {
@@ -385,6 +387,22 @@
 
   .header__theme-menu-list {
     flex-direction: row;
+  }
+  
+  .section_why-hard .section__title {
+    inline-size: 355px;
+  }
+
+  .section_why-hard .section__content {
+    flex-direction: row;
+  }
+
+  .section_why-hard .section__content .card {
+    flex: 1;
+  }
+
+  .section_how-to .section__title {
+    inline-size: 320px;
   }
 }
 
