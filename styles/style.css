@@ -398,10 +398,6 @@
     min-height: 768px;
   }
 
-  .header__theme-menu {
-    padding-top: 10px;
-  }
-
   .content {
     padding-top: 45px;
   }
@@ -429,6 +425,7 @@
   .header__theme-menu {
     justify-self: center;
     align-self: start;
+    padding-top: 10px;
   }
 
   .header__theme-menu-list {
