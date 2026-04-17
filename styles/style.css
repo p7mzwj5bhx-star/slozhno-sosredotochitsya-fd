@@ -281,6 +281,21 @@
     inline-size: 364px;
   }
 
+  .decorated-zone::after {
+    top: var(--spacing-m);
+    right: var(--spacing-m);
+  }
+
+  .decorated-zone::before {
+    bottom: var(--spacing-m);
+    left: var(--spacing-m);
+  }
+
+  .header__rec-label {
+    top: 20px;
+    right: 30px;
+  }
+
   .footer {
     min-height: 1024px;
   }
@@ -299,6 +314,10 @@
     padding-bottom: 40px;
   }
 
+  .section .section__title {
+    inline-size: 236px;
+  }
+  
   /* Секция 2: заголовок на всю ширину, карточки в ряд ниже */
   .section_why-hard {
     grid-template-columns: 1fr;
@@ -315,7 +334,7 @@
   /* Секция 3: заголовок секции на всю ширину, подзаголовок+карточки справа */
   .section_how-to {
     grid-template-columns: 1fr;
-    padding-bottom: 25px;
+    padding-bottom: 80px;
   }
 
   .section_how-to .section__title {
@@ -379,6 +398,14 @@
     min-height: 768px;
   }
 
+  .header__theme-menu {
+    padding-top: 10px;
+  }
+
+  .content {
+    padding-top: 45px;
+  }
+
   .header__description {
     margin-bottom: 123px;
     inline-size: 491px;
@@ -407,7 +434,7 @@
   .header__theme-menu-list {
     flex-direction: row;
   }
-  
+
   .section_why-hard .section__title {
     inline-size: 355px;
   }
@@ -418,6 +445,10 @@
 
   .section_why-hard .section__content .card {
     flex: 1;
+  }
+  
+  .section_how-to {
+    padding-bottom: 50px;
   }
 
   .section_how-to .section__title {
