@@ -1,17 +1,17 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  min-height: 100vh;
   color: var(--color-text);
   font-family: var(--font-family);
   font-size: var(--font-size);
+  background-color: var(--background-color);
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-image: var(--cover-image);
-  background-color: var(--background-color);
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-repeat: no-repeat;
-  min-height: 100vh;
 }
 
 /* Декоративные уголки */
@@ -91,8 +91,8 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  outline: none;
   border-bottom: 1px solid var(--accent-color);
+  outline: none;
 }
 
 .header__theme-menu-button_active {
@@ -130,8 +130,8 @@
 .header__title {
   align-self: center;
   margin-inline-start: calc(var(--spacing-m) * -1);
-  padding-bottom: 30px;
   padding-top: 32px;
+  padding-bottom: 30px;
   padding-left: 20px;
   color: var(--color-title);
   font-weight: bold;
@@ -144,8 +144,8 @@
 .header__description {
   justify-self: end;
   align-self: end;
-  margin-top: 10px;
   max-width: 100%;
+  margin-top: 10px;
   margin-bottom: 56px;
   font-weight: 700;
 }
@@ -276,12 +276,12 @@
 }
 
 .footer__title {
+  padding-top: 5px;
   color: var(--color-title);
   font-weight: bold;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.825;
   text-shadow: 2px 2px 0 var(--footer-shadow-color);
-  padding-top: 5px;
 }
 
 /* Планшет */
@@ -297,16 +297,16 @@
   }
 
   .header__description {
-    margin-bottom: 175px;
+    max-width: 60%;
     margin-right: 10px;
+    margin-bottom: 175px;
     font-weight: bold;
     inline-size: 364px;
-    max-width: 60%;
   }
 
   .header__theme-menu {
-    padding-bottom: 12px;
     padding-right: 7px;
+    padding-bottom: 12px;
   }
 
   .decorated-zone::after {
@@ -379,7 +379,7 @@
   }
 
   .gallery__title {
-    margin-block-end: var(--spacing-m); 
+    margin-block-end: var(--spacing-m);
   }
 
   .gallery {
@@ -437,10 +437,6 @@
     padding: var(--spacing-s);
   }
 
-  .header__theme-menu {
-    top: 10px;
-  }
-  
   .content {
     padding-top: 45px;
   }
@@ -450,9 +446,9 @@
   }
 
   .header__description {
-    margin-bottom: 115px;
-    inline-size: 470px;
     margin-right: var(--spacing-m);
+    margin-bottom: 115px;
+    inline-size: 486px;
   }
 
   .footer {
@@ -460,7 +456,7 @@
   }
 
   .gallery__title {
-    margin-block-end: var(--spacing-m); 
+    margin-block-end: var(--spacing-m);
   }
 
   .gallery {
@@ -474,6 +470,7 @@
 
   /* Меню тем: горизонтально по центру сверху */
   .header__theme-menu {
+    top: 10px;
     justify-self: center;
     align-self: start;
     padding-top: 10px;
