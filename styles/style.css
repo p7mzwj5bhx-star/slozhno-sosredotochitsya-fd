@@ -5,6 +5,7 @@
   font-family: var(--font-family);
   font-size: var(--font-size);
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--cover-image);
   background-color: var(--background-color);
   background-position: center;
   background-size: cover;
@@ -51,22 +52,19 @@
   height: 100vh;
   min-height: 668px;
   padding: 10px;
-  background-image: var(--cover-image);
-  background-size: cover;
 }
 
 /* Меню тем — прижато к правому краю */
 .header__theme-menu {
   justify-self: end;
   align-self: center;
-  padding-top: 10px;
-  padding-right: 5px;
+  padding-top: 32px;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-s);
+  gap: 7px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -85,7 +83,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--accent-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 50%, transparent);
 }
 
 .header__theme-menu-button:focus {
@@ -133,7 +131,7 @@
   align-self: center;
   margin-inline-start: calc(var(--spacing-m) * -1);
   padding-bottom: 30px;
-  padding-top: 10px;
+  padding-top: 32px;
   padding-left: 20px;
   color: var(--color-title);
   font-weight: bold;
@@ -148,7 +146,7 @@
   align-self: end;
   margin-top: 10px;
   max-width: 100%;
-  margin-bottom: 66px;
+  margin-bottom: 56px;
   font-weight: 700;
 }
 
@@ -166,7 +164,7 @@
   flex-direction: column;
   gap: var(--spacing-l);
   max-width: 100%;
-  padding: var(--spacing-l) var(--spacing-s);
+  padding: 42px var(--spacing-s);
 }
 
 /* Мобильная секция. Всё в одну строку. */
@@ -186,6 +184,15 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-m);
+}
+
+.section_why-hard {
+  padding-top: 2px;
+}
+
+.section_how-to {
+  padding-top: 1px;
+  padding-bottom: var(--spacing-s);
 }
 
 /* Карточки */
@@ -274,6 +281,7 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.825;
   text-shadow: 2px 2px 0 var(--footer-shadow-color);
+  padding-top: 5px;
 }
 
 /* Планшет */
@@ -289,9 +297,16 @@
   }
 
   .header__description {
-    margin-bottom: 152px;
+    margin-bottom: 175px;
+    margin-right: 10px;
     font-weight: bold;
     inline-size: 364px;
+    max-width: 60%;
+  }
+
+  .header__theme-menu {
+    padding-bottom: 12px;
+    padding-right: 7px;
   }
 
   .decorated-zone::after {
@@ -319,23 +334,26 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
+  .content {
+    gap: var(--spacing-s);
+  }
+
   /* Секция 1: заголовок слева (1fr), карточки справа (2fr) */
   .section {
     grid-template-columns: 1fr 2fr;
     align-items: start;
-    width: 100%;
-    padding: var(--spacing-m) var(--spacing-m);
-    padding-bottom: 40px;
+    /* width: 100%; */
+    padding: 18px 10px;
   }
 
-  .section .section__title {
-    inline-size: 236px;
+  .card__text {
+    text-align: justify-all;
   }
-  
+
   /* Секция 2: заголовок на всю ширину, карточки в ряд ниже */
   .section_why-hard {
     grid-template-columns: 1fr;
-    padding-bottom: 30px;
+    padding: 55px 10px;
   }
 
   .section_why-hard .section__content {
@@ -348,7 +366,7 @@
   /* Секция 3: заголовок секции на всю ширину, подзаголовок+карточки справа */
   .section_how-to {
     grid-template-columns: 1fr;
-    padding-bottom: 80px;
+    padding-bottom: 38px;
   }
 
   .section_how-to .section__title {
@@ -371,7 +389,6 @@
   /* Галерея: 3 колонки, 2 строки — картинки разного размера */
   .gallery__images {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 200px 245px;
     gap: var(--spacing-m);
   }
 
@@ -420,13 +437,21 @@
     padding: var(--spacing-s);
   }
 
+  .header__theme-menu {
+    top: 10px;
+  }
+  
   .content {
     padding-top: 45px;
   }
 
+  .card__text {
+    text-align: justify-all;
+  }
+
   .header__description {
-    margin-bottom: 123px;
-    inline-size: 491px;
+    margin-bottom: 115px;
+    inline-size: 470px;
     margin-right: var(--spacing-m);
   }
 
@@ -439,12 +464,11 @@
   }
 
   .gallery {
-    padding: 0 var(--spacing-m) var(--spacing-m);
+    padding: 25px var(--spacing-m) 60px var(--spacing-m);
   }
   
   .gallery__images {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 260px 300px;
     gap: var(--spacing-m);
   }
 
@@ -460,11 +484,11 @@
   }
 
   .section {
-    padding: var(--spacing-m) var(--spacing-m);
+    padding: 15px var(--spacing-s);
   }
 
-  .section .section__title {
-    inline-size: 300px;
+  .section_why-hard {
+    padding-top: 56px;
   }
 
   .section_why-hard .section__title {
@@ -480,7 +504,7 @@
   }
   
   .section_how-to {
-    padding-bottom: 50px;
+    padding-top: 55px;
   }
 
   .section_how-to .section__title {

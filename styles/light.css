@@ -33,12 +33,13 @@
     --bg-color: #ffddee;
     --cover-image: url('../images/cover-image-light.png');
  
-    --accent-color: #ff8dcb;
+    --accent-color: #353430;
     --color-text: #2b1939;
-    --color-title: #2b1939;
+    --color-title: #FFC2E6;
+    --shadow-color: #FF8DCB;
  
     --title-decor-bg: #ff8dcb;
-    --title-decor-color: #2b1939;
+    --title-decor-color: #353430;
   }
  
   :root:not(.theme-dark) .header__rec-label {
